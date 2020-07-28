@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Menu from './components/Menu';
+import BannerMain from './components/BannerMain';
+import Carousel from './components/Carousel';
+import Footer from './components/Footer';
 
+import data from './data/dados_iniciais.json';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{background: "#141414"}}>
+      <Menu />
+      <BannerMain videoTitle={"Criando seu primeiro App com Xamarin.Forms"} 
+      videoDescription={"Concebido originalmente como um kit de ferramentas UI, o Xamarin.Forms permite aos Desenvolvedores criar facilmente interfaces de usuário que podem ser compartilhadas entre Android, iOS e Universal Windows Platform (UWP)."}
+      url={"https://www.youtube.com/watch?v=PgQHq-g5y9c&t=8152s"}/>
+      <Carousel category={data.categorias[0]} />
+      <Footer />
     </div>
   );
 }
